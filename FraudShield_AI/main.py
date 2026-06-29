@@ -55,18 +55,6 @@ def show_auth_page():
             else:
                 st.error(message)
 
-    with forgot_tab:
-        st.write("### Forgot Password")
-
-        reset_email = st.text_input("Email", key="reset_email")
-
-        if st.button("Send Password Reset Email", use_container_width=True):
-            ok, message = request_password_reset(reset_email)
-
-            if ok:
-                st.info(message)
-            else:
-                st.error(message)
 
 
 if not st.session_state.authenticated:
